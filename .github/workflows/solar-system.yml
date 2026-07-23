@@ -87,12 +87,6 @@ jobs:
           kubectl version
           echo "Kubernetes context set to: $(kubectl config current-context)"
           kubectl get nodes
-      - name: Save Nginx Ingress IP
-        id: ingress
-        run: |
-          echo "INGRESS_IP=$(kubectl -n ingress-nginx get svc ingress-nginx-controller \
-            -o jsonpath='{.status.loadBalancer.ingress[0].ip}')" >> $GITHUB_ENV
-
       - name: Replace tokens in manifests
         uses: cschleiden/replace-tokens@v1
         with:
