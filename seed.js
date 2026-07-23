@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Use the local MongoDB connection targeting the 'superData' database expected by the app
-const MONGO_URI = 'mongodb://127.0.0.1:27017/superData';
+const MONGO_URI = 'mongodb://mongodb:27017/superData';
 
 // Define the exact Schema used in app.controller.js
 const Schema = mongoose.Schema;
