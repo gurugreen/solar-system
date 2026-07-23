@@ -108,5 +108,6 @@ jobs:
       - name: Verify replaced manifests
         run: cat kubernetes/development/*.yaml
       - name: Deploy to Dev Environment
+        id: deploy
         run: |
           kubectl apply -f kubernetes/development
