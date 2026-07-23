@@ -31,6 +31,7 @@ jobs:
         run: node seed.js
       - name: Run tests
         run: npm test
+        id: test
       - name: Upload test results
         uses: actions/upload-artifact@v7
         with:
