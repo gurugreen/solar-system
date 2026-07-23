@@ -83,7 +83,8 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBECONFIG }}
       - name: Kubectl Version
+        id: kubectl-version
         run: |
           kubectl version
-          echo "Kubernetes context set to: $(kubectl config current-context)
+          echo "Kubernetes context set to: $(kubectl config current-context)"
           kubectl get nodes
