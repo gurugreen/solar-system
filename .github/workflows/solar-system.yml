@@ -5,7 +5,8 @@ on:
 jobs:
   Build:
     timeout-minutes: 3
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
     container:
       image: node:22
     services:
@@ -45,7 +46,8 @@ jobs:
   Docker:
     timeout-minutes: 3
     needs: [Build]
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+    #runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -69,7 +71,8 @@ jobs:
   Deploy:
     needs: [Docker]
     timeout-minutes: 3
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+    #runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
